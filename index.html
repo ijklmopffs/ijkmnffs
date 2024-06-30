@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>ijkmnffs</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="card">
+        <h1 data-testid="slackDisplayName">ijkmnffs</h1>
+        <h2 data-testid="slackEmail">elekwaeke300@gmail.com</h2>
+        <img
+          src="./asset/2.jpg"
+          alt="Nuel Elekwachi"
+          data-testid="slackProfilePicture"
+          width="540"
+          height="960"
+        />
+      </div>
+      <div class="time">
+        <p data-testid="currentDay"></p>
+        <p data-testid="currentTimeUTC"></p>
+      </div>
+
+      <div>
+        <h2>Plans for the next 2 years</h2>
+
+        <ul>
+          <li>
+            Get a new Frontend Development job before the year runs out in a
+            Nigeria based company
+          </li>
+          <li>Dedicate the next 6 months to learning backend development</li>
+          <li>
+            Transition to a FullStack Developer by the second part of 2025 / Get
+            a role in either a Nigerian-based or International company
+          </li>
+          <li>Learn Game Development by 2026</li>
+          <li>Secure a role by the second part of 2026</li>
+        </ul>
+      </div>
+
+      <div class="links">
+        <a href="hng.tech/learn" target="_blank" data-testid="hngLink"
+          >About HNG</a
+        >
+        |
+        <a href="keyword.dog" target="_blank" data-testid="keywordLink"
+          >SEO Optimization Tool</a
+        >
+        |
+        <a
+          href="scrapeanyweb.site"
+          target="_blank"
+          data-testid="scrapeanywebLink"
+          >Scrape Any Web</a
+        >
+      </div>
+    </section>
+
+    <script>
+      function setDayOfWeek() {
+        const dayOfWeekElement = document.querySelector(
+          '[data-testid="currentDay"]'
+        );
+        const currentDate = new Date();
+        const options = { weekday: "long" };
+        const formattedDayOfWeek = currentDate.toLocaleDateString(
+          undefined,
+          options
+        );
+        dayOfWeekElement.textContent = formattedDayOfWeek;
+      }
+      setDayOfWeek();
+
+      function updateClock() {
+        const timeElement = document.querySelector(
+          '[data-testid="currentTimeUTC"]'
+        );
+        const updateClockDisplay = () => {
+          const currentDate = new Date();
+          const options = {
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            timeZoneName: "short",
+          };
+          const formattedTime = currentDate.toLocaleTimeString(
+            undefined,
+            options
+          );
+          timeElement.textContent = formattedTime;
+        };
+
+        updateClockDisplay();
+
+        setInterval(updateClockDisplay, 1000);
+      }
+      updateClock();
+    </script>
+  </body>
+</html>
