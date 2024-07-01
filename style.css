@@ -15,13 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 540px;
-  height: 960px;
   margin-inline: auto;
-}
-
-img {
-  width: 100%;
 }
 
 .links {
@@ -67,5 +61,8 @@ a {
   }
   .links {
     flex-direction: column;
+  }
+  img {
+    width: 100%;
   }
 }
